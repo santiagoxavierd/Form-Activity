@@ -3,39 +3,39 @@ body {
 	font-family: 'Oswald';
 }
 form {
-	margin-left: 40%;
-	margin-top: 3%; 
-	padding: 10px 20px 20px 10px;
-	background: white;
-	border-radius: 5px;
-	display: inline-block;
+    margin-left: 40%;
+    margin-top: 3%; 
+    padding: 10px 20px 20px 10px;
+    background: white;
+    border-radius: 5px;
+    display: inline-block;
 }
 /*CSS for the inputs*/
 input[ type="text" ] {
-	width: 100%;
+    width: 100%;
 }
 input[ type="email" ] {
-	width: 100%;
+    width: 100%;
 }
 input[ type="password" ] {
-	width: 100%;
+    width: 100%;
 }
 input[ type="date" ] {
-	width: 100%;
+    width: 100%;
 }
-input[ type="tel" ] { 
-	width: 100%;
+input[ type="tel" ] {
+    width: 100%;
 }
 textarea{
-	width: 100%;
+    width: 100%;
 }
 input[ type="button"] {
-	color: white;
-	background-color: green;
+    color: white;
+    background-color: green;
 }
 input[ type="reset"]{
-	color: white;
-	background-color: red;
+    color: white;
+    background-color: red;
 }
 #error-message1 {
 	color: red;
