@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form Activity</title>
+		<link rel="stylesheet" href="CSS_Form_Activity.css" type="text/css" />
+		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+		<script>
+			function validateForm() {
+				var password = document.myForm.password.value;
+				var age = calculateAge(document.myForm.bdate.value);
+				var successMessage = document.getElementById("success-message");
+				var errorMessage1 = document.getElementById("error-message1");
+				var errorMessage2 = document.getElementById("error-message2");
+				if (password.length < 8) {
+					errorMessage1.innerHTML = "Password must be at least 8 characters." + "<br>";
+					successMessage.innerHTML = "";
+				} else {
+					errorMessage1.innerHTML = "";
+				}
+				if (age < 21) {
+					errorMessage2.innerHTML = "Minors are not allowed!" + "<br>";
+					successMessage.innerHTML = "";
+				} else {
+					errorMessage2.innerHTML = "";
+				}
+				if (password.length > 7 && age > 20) {
+					successMessage.innerHTML = "Hooray! Your account is successfully created." + "<br>";
+				}
+			}
+			function calculateAge(birthday) {
+				var today = new Date();
+				var birthDate = new Date(birthday);
+				var age = today.getFullYear() - birthDate.getFullYear();
+				var m = today.getMonth() - birthDate.getMonth();
+				if (m <= 0 && today.getDate() < birthDate.getDate()) {
+					age--;
+				}
+				return age;
+			}
+		</script>
+	</head>
+	<body>
+		<form name = "myForm">
+			<h1>Registration Form</h1>
+			<span id="success-message"></span>
+			First Name:
+			<br>
+			<input type="text" name="firstname">
+			<br>
+			Last Name: 
+			<br>
+			<input type="text" name="lastname">
+			<br>
+			Nick Name:
+			<br>
+			<input type="text" name="nickname">
+			<br>
+			Email: 
+			<br>
+			<input type="email" name="email">
+			<br>
+			Password: 
+			<br>
+			<input type="password" name="password" id="password" value="">
+			<br>
+			<span id="error-message1"></span>
+			Date of Birth: 
+			<br>
+			<input type="date" name="bdate">
+			<br>
+			<span id="error-message2"></span>
+			Gender:
+			<input type="radio" name="gender" value="male"> Male 
+			<input type="radio" name="gender" value="female"> Female 
+			<input type="radio" name="gender" value="other"> Other
+			<br>
+			Mobile: 
+			<br>
+			<input type="tel" name="mobile">	
+			<br>
+			Address:
+			<br> 
+			<textarea name="address" cols="30" rows="10"></textarea>
+			<br>
+			<input type="button" name="submit" value="Submit" onclick="return validateForm()">
+			<input type="reset" name="reset" value="Reset">
+		</form>
+	</body>
+</html>
